@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+}
+
+.cabecera {
+    background-color: #1f2937;
+    color: white;
+    padding: 24px;
+    text-align: center;
+}
+
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: 320px 280px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.panel-formulario,
+.panel-lateral,
+.tablero,
+.columna {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form,
+.filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+select,
+textarea,
+button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+.boton-eliminar {
+    background-color: #dc2626;
+}
+
+.boton-eliminar:hover {
+    background-color: #b91c1c;
+}
+
+.boton-editar {
+    background-color: #f59e0b;
+}
+
+.boton-editar:hover {
+    background-color: #d97706;
+}
+
+.columnas-kanban {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.columna {
+    min-height: 300px;
+}
+
+.lista-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta {
+    border-left: 6px solid #999;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.tarjeta h4 {
+    margin: 0 0 8px;
+}
+
+.tarjeta p {
+    margin: 4px 0;
+}
+
+.prioridad-baja {
+    border-left-color: #16a34a;
+}
+
+.prioridad-media {
+    border-left-color: #f59e0b;
+}
+
+.prioridad-alta {
+    border-left-color: #dc2626;
+}
+
+.acciones-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.mensaje-error {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+.pie {
+    text-align: center;
+    padding: 16px;
+    background-color: #e5e7eb;
+}
+
+@media (max-width: 1000px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .columnas-kanban {
+        grid-template-columns: 1fr;
+    }
+}

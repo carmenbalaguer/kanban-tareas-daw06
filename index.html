@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor Kanban de Tareas - DAW06</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="cabecera">
+        <h1>Gestor Kanban de Tareas</h1>
+        <p>Aplicación web para organizar tareas por estado, prioridad y fecha límite.</p>
+    </header>
+
+    <main class="contenedor-principal">
+
+        <section class="panel-formulario">
+            <h2>Nueva tarea</h2>
+
+            <form id="formulario-tarea">
+                <input type="hidden" id="id-tarea">
+
+                <label for="titulo">Título *</label>
+                <input type="text" id="titulo" placeholder="Ejemplo: Entregar práctica DAW06">
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" placeholder="Describe la tarea"></textarea>
+
+                <label for="prioridad">Prioridad</label>
+                <select id="prioridad">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+
+                <label for="fecha-limite">Fecha límite</label>
+                <input type="date" id="fecha-limite">
+
+                <label for="estado">Estado</label>
+                <select id="estado">
+                    <option value="porHacer">Por hacer</option>
+                    <option value="enCurso">En curso</option>
+                    <option value="hecho">Hecho</option>
+                </select>
+
+                <button type="submit" id="boton-guardar">Guardar tarea</button>
+                <button type="button" id="boton-cancelar" class="oculto">Cancelar edición</button>
+
+                <p id="mensaje-error" class="mensaje-error"></p>
+            </form>
+        </section>
+
+        <aside class="panel-lateral">
+            <section class="filtros">
+                <h2>Filtros y búsqueda</h2>
+
+                <label for="filtro-estado">Filtrar por estado</label>
+                <select id="filtro-estado">
+                    <option value="todos">Todos</option>
+                    <option value="porHacer">Por hacer</option>
+                    <option value="enCurso">En curso</option>
+                    <option value="hecho">Hecho</option>
+                </select>
+
+                <label for="filtro-prioridad">Filtrar por prioridad</label>
+                <select id="filtro-prioridad">
+                    <option value="todas">Todas</option>
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+
+                <label for="busqueda">Buscar</label>
+                <input type="text" id="busqueda" placeholder="Buscar por título o descripción">
+            </section>
+
+            <section class="estadisticas">
+                <h2>Estadísticas</h2>
+                <p>Total de tareas: <span id="total-tareas">0</span></p>
+                <p>Por hacer: <span id="total-por-hacer">0</span></p>
+                <p>En curso: <span id="total-en-curso">0</span></p>
+                <p>Hechas: <span id="total-hecho">0</span></p>
+                <p>Completadas: <span id="porcentaje-hecho">0%</span></p>
+            </section>
+        </aside>
+
+        <section class="tablero">
+            <h2>Tablero Kanban</h2>
+
+            <div class="columnas-kanban">
+
+                <section class="columna" data-estado="porHacer">
+                    <h3>Por hacer</h3>
+                    <div id="columna-por-hacer" class="lista-tareas"></div>
+                </section>
+
+                <section class="columna" data-estado="enCurso">
+                    <h3>En curso</h3>
+                    <div id="columna-en-curso" class="lista-tareas"></div>
+                </section>
+
+                <section class="columna" data-estado="hecho">
+                    <h3>Hecho</h3>
+                    <div id="columna-hecho" class="lista-tareas"></div>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>Proyecto DAW06 - Gestor Kanban de tareas</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
