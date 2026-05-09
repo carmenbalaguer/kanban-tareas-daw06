@@ -13,6 +13,7 @@ const inputEstado = document.getElementById("estado");
 const botonGuardar = document.getElementById("boton-guardar");
 const botonCancelar = document.getElementById("boton-cancelar");
 const mensajeError = document.getElementById("mensaje-error");
+const mensajeExito = document.getElementById("mensaje-exito");
 
 const filtroEstado = document.getElementById("filtro-estado");
 const filtroPrioridad = document.getElementById("filtro-prioridad");
@@ -64,6 +65,7 @@ function guardarDesdeFormulario(evento) {
 
     if (titulo === "") {
         mensajeError.textContent = "El título de la tarea es obligatorio.";
+        mensajeExito.textContent = "";
         return;
     }
 
@@ -73,8 +75,10 @@ function guardarDesdeFormulario(evento) {
 
     if (idEditando) {
         actualizarTarea(idEditando, titulo, descripcion, prioridad, fechaLimite, estado);
+        mensajeExito.textContent = "Tarea actualizada correctamente.";
     } else {
         crearTarea(titulo, descripcion, prioridad, fechaLimite, estado);
+        mensajeExito.textContent = "Tarea creada correctamente.";
     }
 
     guardarTareas();
