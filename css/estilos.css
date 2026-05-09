@@ -138,6 +138,11 @@ button:hover {
     font-weight: bold;
 }
 
+.mensaje-exito {
+    color: #16a34a;
+    font-weight: bold;
+}
+
 .oculto {
     display: none;
 }
