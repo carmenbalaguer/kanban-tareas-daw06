@@ -37,6 +37,7 @@ function iniciarAplicacion() {
     renderizarAplicacion();
 }
 
+// Carga las tareas guardadas en localStorage.
 function cargarTareas() {
     const datos = localStorage.getItem(CLAVE_STORAGE);
 
@@ -47,6 +48,7 @@ function cargarTareas() {
     return JSON.parse(datos);
 }
 
+// Guarda el array de tareas en localStorage.
 function guardarTareas() {
     localStorage.setItem(CLAVE_STORAGE, JSON.stringify(tareas));
 }
@@ -80,6 +82,7 @@ function guardarDesdeFormulario(evento) {
     renderizarAplicacion();
 }
 
+// Crea un nuevo objeto tarea con los datos del formulario.
 function crearTarea(titulo, descripcion, prioridad, fechaLimite, estado) {
     const nuevaTarea = {
         id: Date.now().toString(),
