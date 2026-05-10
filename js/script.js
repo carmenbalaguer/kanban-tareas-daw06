@@ -18,6 +18,7 @@ const mensajeExito = document.getElementById("mensaje-exito");
 const filtroEstado = document.getElementById("filtro-estado");
 const filtroPrioridad = document.getElementById("filtro-prioridad");
 const busqueda = document.getElementById("busqueda");
+const botonLimpiarFiltros = document.getElementById("boton-limpiar-filtros");
 
 const columnaPorHacer = document.getElementById("columna-por-hacer");
 const columnaEnCurso = document.getElementById("columna-en-curso");
@@ -34,6 +35,7 @@ function iniciarAplicacion() {
     filtroEstado.addEventListener("change", renderizarAplicacion);
     filtroPrioridad.addEventListener("change", renderizarAplicacion);
     busqueda.addEventListener("input", renderizarAplicacion);
+    botonLimpiarFiltros.addEventListener("click", limpiarFiltros);
 
     renderizarAplicacion();
 }
@@ -262,6 +264,14 @@ function actualizarEstadisticas() {
     document.getElementById("total-en-curso").textContent = totalEnCurso;
     document.getElementById("total-hecho").textContent = totalHecho;
     document.getElementById("porcentaje-hecho").textContent = `${porcentaje}%`;
+}
+
+function limpiarFiltros() {
+    filtroEstado.value = "todos";
+    filtroPrioridad.value = "todas";
+    busqueda.value = "";
+
+    renderizarAplicacion();
 }
 
 function capitalizar(texto) {
