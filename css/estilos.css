@@ -162,3 +162,70 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 1200px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tablero {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 900px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .cabecera {
+        padding: 20px 12px;
+    }
+
+    .cabecera h1 {
+        font-size: 26px;
+    }
+
+    .panel-formulario,
+    .panel-lateral,
+    .tablero {
+        width: 100%;
+    }
+
+    .columnas-kanban {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecera h1 {
+        font-size: 22px;
+    }
+
+    .cabecera p {
+        font-size: 14px;
+    }
+
+    .contenedor-principal {
+        gap: 12px;
+    }
+
+    .panel-formulario,
+    .panel-lateral,
+    .tablero,
+    .columna {
+        padding: 12px;
+    }
+
+    .tarjeta {
+        padding: 10px;
+    }
+}
